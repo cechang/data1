@@ -11,4 +11,5 @@ package data1;
  */
 public interface Node {
     public boolean isEmptyHuh();
+    public int cardinality();
 }

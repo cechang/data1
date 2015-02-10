@@ -17,4 +17,8 @@ public class EmptyNode implements Node{
         return true;
     }
     
+    public int cardinality(){
+        return 0;
+    }
+   
 }

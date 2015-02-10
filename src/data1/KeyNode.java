@@ -25,4 +25,7 @@ public class KeyNode implements Node{
         return false;
     }
     
+    public int cardinality(){
+        return 1 + this.left.cardinality() + this.right.cardinality();
+    }
 }

@@ -23,6 +23,21 @@ public class Data1 {
         System.out.println(mtNode.isEmptyHuh() + " should be true");
         System.out.println(myTest1.isEmptyHuh() + " should be false");
         System.out.println(myTest2.isEmptyHuh() + " should be true");
+        
+        
+        /* BST
+                            6
+                           / \
+                          3   7
+                         
+        */        
+        KeyNode node1 = new KeyNode (mtNode,3,mtNode);
+        KeyNode node2 = new KeyNode (mtNode,7,mtNode);
+        KeyNode head = new KeyNode(node1, 6, node2);
+        FiniteSet myTest3 = new FiniteSet(head);
+        System.out.println("the cardinality of myTest3 is " + myTest3.cardinality() + " should be 3");
+        System.out.println("the cardinality of myTest2 is " + myTest2.cardinality() + " should be 0");
+        System.out.println("the cardinality of myTest1 is " + myTest1.cardinality() + " should be 1");
         // TODO code application logic here
     }
     

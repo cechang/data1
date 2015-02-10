@@ -30,5 +30,9 @@ public class FiniteSet {
         FiniteSet newFS = new FiniteSet(mt);
         return newFS;
     }
+    
+    public int cardinality(){
+        return this.head.cardinality();
+    }
   
 }
