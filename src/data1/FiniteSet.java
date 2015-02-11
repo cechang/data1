@@ -34,5 +34,15 @@ public class FiniteSet {
     public int cardinality(){
         return this.head.cardinality();
     }
+    public boolean member(int elt){
+        return this.head.member(elt);
+    }
+    public Node add(int elt){
+        return this.head.add(elt);
+    }
+    
+    public Node union(Node otherNode){
+        return this.head.union(otherNode);
+    }
   
 }

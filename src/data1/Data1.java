@@ -38,6 +38,12 @@ public class Data1 {
         System.out.println("the cardinality of myTest3 is " + myTest3.cardinality() + " should be 3");
         System.out.println("the cardinality of myTest2 is " + myTest2.cardinality() + " should be 0");
         System.out.println("the cardinality of myTest1 is " + myTest1.cardinality() + " should be 1");
+        System.out.println("the number 3 is a member of my Test3: " + myTest3.member(3) + " should be true");
+        System.out.println("the number 8 is a member of my Test3: " + myTest3.member(8) + " should be false");
+        System.out.println("the number 7 is a member of my Test3: " + myTest3.member(7) + " should be true");
+        System.out.println("the number 7 is a member of my Test3: " + myTest3.member(7) + " should be true");
+        System.out.println("add 8 to Test3: " + myTest3.add(8) + " should be 3 6 7 8");
+        System.out.println("unite Test3 and Test1: " + myTest3.union(myTest1) + " should be 3 5 6 7");
         // TODO code application logic here
     }
     

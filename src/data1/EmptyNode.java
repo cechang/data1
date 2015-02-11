@@ -17,8 +17,23 @@ public class EmptyNode implements Node{
         return true;
     }
     
+    public String toString() {
+        return "";
+    }
+    
     public int cardinality(){
         return 0;
     }
-   
+    public boolean member(int elt){
+        return false;
+    }
+    
+    public Node add(int elt){
+        Node newNode = new KeyNode(this, elt, this);
+        return newNode;                
+    }
+    
+    public Node union(Node otherNode){
+        return otherNode;
+    }
 }

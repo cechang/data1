@@ -28,4 +28,52 @@ public class KeyNode implements Node{
     public int cardinality(){
         return 1 + this.left.cardinality() + this.right.cardinality();
     }
+    
+    public boolean member(int elt){
+        if(elt == this.key){
+            return true;
+        }
+        else if(elt > this.key){
+            return this.right.member(elt);
+        }
+        else{
+            return this.left.member(elt);
+        }
+    }
+    
+    public Node add(int elt){
+        if(elt == this.key){
+            return this;
+        }
+        else if(elt > this.key){
+            return new KeyNode(this.left, this.key, this.right.add(elt));
+        }
+        else{
+            return new KeyNode(this.right.add(elt), this.key, this.left);
+        }
+    }
+    
+    public String toString() {
+        return this.left.toString() + " " +
+                this.key + " " +
+                this.right.toString();
+    }
+    
+    public Node union(Node otherNode){
+        Node newNode = otherNode.add(this.key).union(this.left).union(this.right);
+        return newNode;
+    }
+    /*public Node remove(int elt){
+        if(elt == this.key){
+            return new KeyNode();
+        }
+        else if(elt > this.key){
+            return new KeyNode(this.left, this.key, this.right.add(elt));
+        }
+        else{
+            return new KeyNode(this.right.add(elt), this.key, this.left);
+        }
+    }*/
+    
+    
 }
