@@ -36,4 +36,8 @@ public class EmptyNode implements Node{
     public Node union(Node otherNode){
         return otherNode;
     }
+    
+    public Node remove(int elt){
+        return this;
+    }
 }

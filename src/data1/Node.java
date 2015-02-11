@@ -16,5 +16,5 @@ public interface Node {
     public boolean member(int elt);
     public Node add(int elt);
     public Node union(Node otherNode);
-    //public Node remove(int elt);
+    public Node remove(int elt);
 }

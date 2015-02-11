@@ -44,6 +44,8 @@ public class Data1 {
         System.out.println("the number 7 is a member of my Test3: " + myTest3.member(7) + " should be true");
         System.out.println("add 8 to Test3: " + myTest3.add(8) + " should be 3 6 7 8");
         System.out.println("unite Test3 and Test1: " + myTest3.union(myTest1) + " should be 3 5 6 7");
+        System.out.println("remove 6 from Test3: " + myTest3.remove(6) + " should be 3 7");
+        
         // TODO code application logic here
     }
     

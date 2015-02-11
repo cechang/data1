@@ -21,6 +21,14 @@ public class FiniteSet {
             this.head = head;
     }
     
+    public String toString(){
+        return this.head.toString();
+    }
+    
+    public Node getHead(){
+        return this.head;
+    }
+    
     public boolean isEmptyHuh(){
         return this.head.isEmptyHuh();
     }
@@ -34,15 +42,21 @@ public class FiniteSet {
     public int cardinality(){
         return this.head.cardinality();
     }
+    
     public boolean member(int elt){
         return this.head.member(elt);
     }
-    public Node add(int elt){
-        return this.head.add(elt);
+    
+    public FiniteSet add(int elt){
+        return new FiniteSet(this.head.add(elt));
     }
     
-    public Node union(Node otherNode){
-        return this.head.union(otherNode);
+    public FiniteSet union(FiniteSet otherSet){
+        return new FiniteSet(this.head.union(otherSet.getHead()));
+    }
+    
+    public FiniteSet remove(int elt){
+        return new FiniteSet(this.head.remove(elt));
     }
   
 }

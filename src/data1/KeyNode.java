@@ -49,7 +49,7 @@ public class KeyNode implements Node{
             return new KeyNode(this.left, this.key, this.right.add(elt));
         }
         else{
-            return new KeyNode(this.right.add(elt), this.key, this.left);
+            return new KeyNode(this.left.add(elt), this.key, this.right);
         }
     }
     
@@ -60,20 +60,21 @@ public class KeyNode implements Node{
     }
     
     public Node union(Node otherNode){
-        Node newNode = otherNode.add(this.key).union(this.left).union(this.right);
-        return newNode;
+        Node newNode = otherNode.add(this.key);
+        return (this.right.union(this.left)).union(newNode);
     }
-    /*public Node remove(int elt){
+    
+    public Node remove(int elt){
         if(elt == this.key){
-            return new KeyNode();
+            return this.left.union(this.right);
         }
         else if(elt > this.key){
-            return new KeyNode(this.left, this.key, this.right.add(elt));
+            return new KeyNode(this.left, this.key, this.right.remove(elt));
         }
         else{
-            return new KeyNode(this.right.add(elt), this.key, this.left);
+            return new KeyNode(this.right.remove(elt), this.key, this.left);
         }
-    }*/
+    }
     
     
 }
