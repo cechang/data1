@@ -58,5 +58,21 @@ public class FiniteSet {
     public FiniteSet remove(int elt){
         return new FiniteSet(this.head.remove(elt));
     }
+    
+    public FiniteSet inter(FiniteSet otherSet){
+        return new FiniteSet(this.head.inter(otherSet.getHead()));
+    }
+    
+    public FiniteSet diff(FiniteSet otherSet){
+        return new FiniteSet(this.head.diff(otherSet.getHead()));
+    }
+    
+    public boolean subset(FiniteSet otherSet){
+        return this.head.subset(otherSet.getHead());
+    }
+    
+    public boolean equal(FiniteSet otherSet){
+        return this.head.equal(otherSet.getHead());
+    }
   
 }

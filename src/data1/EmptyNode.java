@@ -40,4 +40,20 @@ public class EmptyNode implements Node{
     public Node remove(int elt){
         return this;
     }
+    
+    public Node inter(Node otherNode){
+        return this;
+    }
+    
+    public Node diff(Node otherNode){
+        return otherNode;
+    }
+    
+    public boolean subset(Node otherNode){
+        return true;
+    }
+    
+    public boolean equal(Node otherNode){
+        return true;
+    }
 }

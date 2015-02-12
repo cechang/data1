@@ -9,7 +9,7 @@ import java.util.Random;
  *
  * @author Cedric
  */
-public class Test {
+/*public class Test {
     
     public void tester(){
         for(int i = 0; i < 100; i++){
@@ -20,6 +20,7 @@ public class Test {
       
     
 }
+*/
 /*
 int max = 1000;
 int min = 0;

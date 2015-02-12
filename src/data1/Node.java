@@ -17,4 +17,8 @@ public interface Node {
     public Node add(int elt);
     public Node union(Node otherNode);
     public Node remove(int elt);
+    public Node inter(Node otherNode);
+    public Node diff(Node otherNode);
+    public boolean subset(Node otherNode);
+    public boolean equal(Node otherNode);
 }

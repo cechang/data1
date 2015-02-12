@@ -72,9 +72,42 @@ public class KeyNode implements Node{
             return new KeyNode(this.left, this.key, this.right.remove(elt));
         }
         else{
-            return new KeyNode(this.right.remove(elt), this.key, this.left);
+            return new KeyNode(this.left.remove(elt), this.key, this.right);
         }
     }
+    
+    public Node inter(Node otherNode){
+        if(otherNode.member(this.key) == true){
+            return new KeyNode(this.left.inter(otherNode), this.key, this.right.inter(otherNode));
+        }
+        else{
+            return this.remove(this.key).inter(otherNode);                    
+        }
+    }
+    
+    public Node diff(Node otherNode){
+        return (this.remove(this.key)).diff(otherNode.remove(this.key));
+    }
+    
+    public boolean subset(Node otherNode){
+        if(otherNode.member(this.key) == true){
+            return this.left.subset(otherNode) && this.right.subset(otherNode);
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public boolean equal(Node otherNode){
+        if(otherNode.subset(this) && this.subset(otherNode) == true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    
+    }
+        
     
     
 }
