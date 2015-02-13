@@ -16,9 +16,9 @@ public class Test {
     public Test() {
     }
 
-    public static FiniteSet randFiniteSet(int x) {
+    public static FiniteSet randFiniteSet(int n) {
         Node newNode = new EmptyNode();
-        for (int i = 0; i < x; i++) {
+        for (int i = 0; i < n; i++) {
             int rand = (int) ((Math.round(100 * Math.random())));
             newNode = newNode.add(rand);
         }
