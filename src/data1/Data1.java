@@ -83,9 +83,10 @@ public class Data1 {
         System.out.println("myTest4 is equal to myTest3: " + myTest4.equal(myTest3) + " should be false");
         System.out.println("myTest4 is equal to myTest5: " + myTest4.equal(myTest5) + " should be true");
         Test randTest = new Test();
-        System.out.println(randTest.testProperty1(1000, 100));
-
-
+        System.out.println(randTest.testProperty1(1000, 10));
+        System.out.println(randTest.testProperty2(1000, 10));
+        System.out.println(randTest.testProperty3(1000, 10));
+        System.out.println(randTest.testProperty4(1000, 10));
         // TODO code application logic here
     }
     

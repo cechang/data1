@@ -28,8 +28,6 @@ public class Test {
     /*
      Property 1
      member (add t x) y = true <-> x = y \/ member t y = true
-     Property 2
-     member (union s s') x = true <-> member s x = true \/ member s' x = true
      */
     public String testProperty1(int t, int n) {
         for (int i = 0; i < t; i++) {
@@ -47,22 +45,63 @@ public class Test {
             } 
             else {
                 if (tester1.member(y) || (x == y)) {
-                    return ("you can't code, " + x + " and " + y + "fails with " + tester1 );
+                    return ("you can't code, " + x + " and " + y + " fails with " + tester1 );
                 }
             }
         }
         return "hurray " + t + " tests worked";
     }
+    /*
+    Property2 
+    (t.diff(u)).subset(u) == true
+    */
+    public String testProperty2(int t, int n) {
+        for (int i = 0; i < t; i++){
+            Test randTest1 = new Test();
+            FiniteSet tester1 = randTest1.randFiniteSet(n);
+            Test randTest2 = new Test();
+            FiniteSet tester2 = randTest2.randFiniteSet(n);
+            if( ! (tester1.diff(tester2)).subset(tester2)){
+                return ("you can't code, " + tester1 + " and " + tester2 + " fail");
+            }                                      
+        }
+        return "hurray " + t + " tests worked";
+    }
     
+    /*
+    Property3 
+    u.inter(t) == t.inter(u)
+    */
+    public String testProperty3(int t, int n) {
+        for (int i = 0; i < t; i++){
+            Test randTest1 = new Test();
+            FiniteSet tester1 = randTest1.randFiniteSet(n);
+            Test randTest2 = new Test();
+            FiniteSet tester2 = randTest2.randFiniteSet(n);
+            if( ! (tester2.inter(tester1)).equal(tester1.inter(tester2))){
+                return ("you can't code, " + tester1 + " and " + tester2 + " fail");
+            }                                      
+        }
+        return "hurray " + t + " tests worked";
+    }
+    
+    /*
+    Property4 
+    t.empty().cardinality == 0 if t.empty().isEmptyHuh() is true
+    */
+    public String testProperty4(int t, int n) {
+        for (int i = 0; i < t; i++){
+            Test randTest1 = new Test();
+            FiniteSet tester1 = randTest1.randFiniteSet(n);            
+            if((tester1.empty().cardinality() == 0)){
+                if( ! tester1.empty().isEmptyHuh()){
+                return ("you can't code, " + tester1 + " fails");
+                }
+            }                                      
+        }
+        return "hurray " + t + " tests worked";
+    }        
     
 
 }
 
-
-/*
- int max = 1000;
- int min = 0;
- Random rand = new Random();
- int randNum = rand.nextInt((max - min) + 1) + min;
- return randNum;
- */
